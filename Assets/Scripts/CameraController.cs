@@ -6,13 +6,13 @@ public class CameraController : MonoBehaviour
 {
     public Camera cam;
     private Vector3 dragOrigin;
-    private float zoomValue = 1;
-    private float minCamSize = 3;
-    private float maxCamSize = 20;
-    private float leftBorderCoordinate = -32;
-    private float topBorderCoordinate = 16;
-    private float rightBorderCoordinate = 32;
-    private float bottomBorderCoordinate = -16;
+    private float zoomValue = 0.5f;
+    private float minCamSize = 1.5f;
+    private float maxCamSize = 7;
+    private float leftBorderCoordinate = -12;
+    private float topBorderCoordinate = 4;
+    private float rightBorderCoordinate = 9;
+    private float bottomBorderCoordinate = -5;
     // Start is called before the first frame update
     void Start()
     {
