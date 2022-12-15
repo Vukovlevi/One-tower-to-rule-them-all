@@ -7,8 +7,6 @@ public class Inventory : MonoBehaviour
     public Transform slotHolder;
     public List<Slot> slots = new List<Slot>();
 
-    public Item testItem; 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +15,6 @@ public class Inventory : MonoBehaviour
         {
             slots.Add(_slot);
         }
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-            AddItem(testItem);
     }
 
     public void AddItem(Item item)
