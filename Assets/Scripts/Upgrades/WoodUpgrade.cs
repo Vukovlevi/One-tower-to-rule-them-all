@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class WoodUpgrade : MonoBehaviour
 {
     public GameObject UI;
+    private bool UIActive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,15 @@ public class WoodUpgrade : MonoBehaviour
 
     public void OnMouseDown()
     {
-        UI.SetActive(true);
+        if (!UIActive)
+        {
+            UI.SetActive(true);
+            UIActive = true;
+        }
+        else
+        {
+            UI.SetActive(false);
+            UIActive = false;
+        }
     }
 }
