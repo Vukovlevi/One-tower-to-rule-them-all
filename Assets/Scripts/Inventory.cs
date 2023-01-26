@@ -28,4 +28,27 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+    public int CountItem(string itemName)
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.item.name == itemName)
+            {
+                return slot.count;
+            }
+        }
+        return -1;
+    }
+
+    public void removeItem(string itemName, int count)
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.item.name == itemName)
+            {
+                slot.decreaseItem(count);
+            }
+        }
+    }
 }

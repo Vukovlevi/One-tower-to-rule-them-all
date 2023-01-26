@@ -27,4 +27,22 @@ public class WoodGenerator : MonoBehaviour
             timeSinceLastWood -= Time.deltaTime;
         }
     }
+
+    public void UpgradeToLevel(int level)
+    {
+        switch(level)
+        {
+            case 2:
+                inventory.GetComponent<Inventory>().removeItem("Log", 10);
+                inventory.GetComponent<Inventory>().removeItem("Gold", 3);
+                timeBetweenWoods = 3; // TODO: éles számokra cserélni
+                break;
+            case 3:
+                inventory.GetComponent<Inventory>().removeItem("Log", 15);
+                inventory.GetComponent<Inventory>().removeItem("Stone", 3);
+                inventory.GetComponent<Inventory>().removeItem("Gold", 5);
+                timeBetweenWoods = 1;
+                break;
+        }
+    }
 }
