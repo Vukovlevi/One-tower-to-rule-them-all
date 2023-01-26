@@ -18,7 +18,7 @@ public class Character : MonoBehaviour
         if(Vector2.Distance(transform.position, Wpoints.waypoints[waypointIndex].position) < 0.1f)
         {
             waypointIndex++;
-            if(waypointIndex< Wpoints.waypoints.Length)
+            if(waypointIndex< Wpoints.waypoints.Length - 1)
             {
                 waypointIndex++;
             }
