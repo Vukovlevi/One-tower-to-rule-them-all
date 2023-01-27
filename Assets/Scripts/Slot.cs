@@ -30,6 +30,9 @@ public class Slot : MonoBehaviour
         if (count == 0)
         {
             iconImage.sprite = null;
+            var color = iconImage.color;
+            color.a = 0f;
+            iconImage.color = color;
         }
     }
 }
