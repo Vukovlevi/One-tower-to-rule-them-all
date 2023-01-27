@@ -16,6 +16,7 @@ public class GoldUpgrade : MonoBehaviour
 
     public GameObject UI;
     public GameObject inventory;
+    public Button buyUpgradeBtn;
     public Text costText;
     public Text levelText;
     public Text errorText;
@@ -45,6 +46,7 @@ public class GoldUpgrade : MonoBehaviour
         {
             UI.SetActive(true);
             UIActive = true;
+            buyUpgradeBtn.gameObject.SetActive(true);
             decideCost();
             showCost(cost);
         }
@@ -52,6 +54,7 @@ public class GoldUpgrade : MonoBehaviour
         {
             UI.SetActive(false);
             UIActive = false;
+            buyUpgradeBtn.gameObject.SetActive(false);
             errorText.enabled = false;
         }
     }
