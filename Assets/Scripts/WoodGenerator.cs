@@ -35,7 +35,7 @@ public class WoodGenerator : MonoBehaviour
             case 2:
                 inventory.GetComponent<Inventory>().removeItem("Log", 10);
                 inventory.GetComponent<Inventory>().removeItem("Gold", 3);
-                timeBetweenWoods = 3; // TODO: éles számokra cserélni
+                timeBetweenWoods = 3; // TODO: ï¿½les szï¿½mokra cserï¿½lni
                 break;
             case 3:
                 inventory.GetComponent<Inventory>().removeItem("Log", 15);

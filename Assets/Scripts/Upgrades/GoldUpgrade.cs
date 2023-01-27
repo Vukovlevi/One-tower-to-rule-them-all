@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class WoodUpgrade : MonoBehaviour
+public class GoldUpgrade : MonoBehaviour
 {
     public struct Cost
     {
@@ -61,14 +61,14 @@ public class WoodUpgrade : MonoBehaviour
         switch(level)
         {
             case 1:
-                cost.woods = 10;
-                cost.stones = 0;
-                cost.golds = 3;
+                cost.woods = 4;
+                cost.stones = 4;
+                cost.golds = 6;
                 break;
             case 2:
-                cost.woods = 15;
-                cost.stones = 3;
-                cost.golds = 5;
+                cost.woods = 10;
+                cost.stones = 10;
+                cost.golds = 8;
                 break;
             case 3:
                 break;
@@ -113,7 +113,7 @@ public class WoodUpgrade : MonoBehaviour
             return;
         }
         level++;
-        this.GetComponentInParent<WoodGenerator>().UpgradeToLevel(level);
+        this.GetComponentInParent<GoldGenerator>().UpgradeToLevel(level);
         toggleUI();
     }
 }

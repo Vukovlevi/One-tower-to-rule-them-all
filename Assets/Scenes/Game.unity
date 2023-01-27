@@ -417,6 +417,7 @@ GameObject:
   - component: {fileID: 115250490}
   - component: {fileID: 115250489}
   - component: {fileID: 115250491}
+  - component: {fileID: 115250492}
   m_Layer: 0
   m_Name: Gold Generator
   m_TagString: Untagged
@@ -533,6 +534,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.67}
   m_EdgeRadius: 0
+--- !u!114 &115250492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115250487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a637b0ffffe4274f82f5744b5410bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 95974855}
+  inventory: {fileID: 1355003084}
+  costText: {fileID: 1767273621}
+  levelText: {fileID: 788935221}
+  errorText: {fileID: 63671912}
 --- !u!1 &359239745
 GameObject:
   m_ObjectHideFlags: 0
@@ -12935,6 +12953,7 @@ GameObject:
   - component: {fileID: 8622023996395727653}
   - component: {fileID: 8622023996395727656}
   - component: {fileID: 8622023996395727657}
+  - component: {fileID: 8622023996395727658}
   m_Layer: 0
   m_Name: Stone Generator
   m_TagString: Untagged
@@ -12984,3 +13003,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.67}
   m_EdgeRadius: 0
+--- !u!114 &8622023996395727658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8622023996395727655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55dc337997738e8479f18d23b2466705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 95974855}
+  inventory: {fileID: 1355003084}
+  costText: {fileID: 1767273621}
+  levelText: {fileID: 788935221}
+  errorText: {fileID: 63671912}
