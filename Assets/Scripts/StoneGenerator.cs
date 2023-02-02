@@ -27,4 +27,22 @@ public class StoneGenerator : MonoBehaviour
             timeSinceLastStone -= Time.deltaTime;
         }
     }
+
+ public void UpgradeToLevel(int level)
+    {
+        switch(level)
+        {
+            case 2:
+                inventory.GetComponent<Inventory>().removeItem("Stone", 4);
+                inventory.GetComponent<Inventory>().removeItem("Gold", 4);
+                timeBetweenStones = 5; // TODO: �les sz�mokra cser�lni
+                break;
+            case 3:
+                inventory.GetComponent<Inventory>().removeItem("Log", 6);
+                inventory.GetComponent<Inventory>().removeItem("Stone", 8);
+                inventory.GetComponent<Inventory>().removeItem("Gold", 6);
+                timeBetweenStones = 3;
+                break;
+        }
+    }
 }

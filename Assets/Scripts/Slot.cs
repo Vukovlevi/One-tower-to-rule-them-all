@@ -22,4 +22,17 @@ public class Slot : MonoBehaviour
             iconImage.color = color;
         }
     }
+
+    public void decreaseItem(int removeCount)
+    {
+        count -= removeCount;
+        countText.text = count.ToString();
+        if (count == 0)
+        {
+            iconImage.sprite = null;
+            var color = iconImage.color;
+            color.a = 0f;
+            iconImage.color = color;
+        }
+    }
 }

@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Waypoints
+  - Waypoints1
+  - Waypoints2
+  - Waypoints3
+  - Waypoints4
   layers:
   - Default
   - TransparentFX
