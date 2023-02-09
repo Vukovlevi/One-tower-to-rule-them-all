@@ -17,8 +17,8 @@ public class ProjectileArrow : MonoBehaviour
 
     public void Create(Vector3 spawnPosition, GameObject targetGet)
     {
-        Instantiate(pfProjectileArrow, spawnPosition, Quaternion.identity);
         target = targetGet;
+        Instantiate(pfProjectileArrow, spawnPosition, Quaternion.identity);
     }
 
     // Update is called once per frame
