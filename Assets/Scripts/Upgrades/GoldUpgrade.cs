@@ -84,9 +84,9 @@ public class GoldUpgrade : MonoBehaviour
         {
             errorText.text = "A legmagasabb szintű az épület!";
             errorText.enabled = true;
+            levelText.text = "Szint: " + level.ToString();
             return;
         }
-        levelText.text = "Szint: " + level.ToString();
         string costString = "A következő fejlesztés ára:\n";
         if (currentCost.woods != 0)
         {

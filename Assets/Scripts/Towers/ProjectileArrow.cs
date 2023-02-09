@@ -7,7 +7,7 @@ public class ProjectileArrow : MonoBehaviour
     public Transform pfProjectileArrow;
     private float moveSpeed = 8f;
     private float destroyDistance = 0.2f;
-    public Vector3 targetPositionLocale;
+    public GameObject target;
 
     // Start is called before the first frame update
     void Start()
@@ -15,23 +15,28 @@ public class ProjectileArrow : MonoBehaviour
 
     }
 
-    public void Create(Vector3 spawnPosition, Vector3 targetPosition)
+    public void Create(Vector3 spawnPosition, GameObject targetGet)
     {
         Instantiate(pfProjectileArrow, spawnPosition, Quaternion.identity);
-        targetPositionLocale = targetPosition;
+        target = targetGet;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 moveDir = (targetPositionLocale - transform.position).normalized;
+        if (target == null)
+        {
+            Destroy(gameObject);
+        }
+        Vector3 moveDir = (target.transform.position - transform.position).normalized;
         transform.position += moveDir * moveSpeed * Time.deltaTime;
 
         float angle = GetAngleFromVectorFloat(moveDir);
         transform.eulerAngles = Vector3.forward * angle;
 
-        if (Vector3.Distance(targetPositionLocale, transform.position) < destroyDistance)
+        if (Vector3.Distance(target.transform.position, transform.position) < destroyDistance)
         {
+            Destroy(target);
             Destroy(gameObject);
         }
     }
