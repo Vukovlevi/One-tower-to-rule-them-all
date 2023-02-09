@@ -9,6 +9,8 @@ TagManager:
   - Waypoints2
   - Waypoints3
   - Waypoints4
+  - Enemy
+  - Spawner
   layers:
   - Default
   - TransparentFX
