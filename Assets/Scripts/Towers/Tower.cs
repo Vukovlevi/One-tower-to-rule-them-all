@@ -30,9 +30,10 @@ public class Tower : MonoBehaviour
         if (enemiesArray.Length > 0)
         {
             target = getClosestEnemy(enemiesArray);
-            if ((target.transform.position - transform.position).sqrMagnitude <= 15f && timeSinceLastShot <= 0)
+            if ((target.transform.position - transform.position).sqrMagnitude <= 5f && timeSinceLastShot <= 0)
             {
                 timeSinceLastShot = timeBetweenShots;
+                Debug.Log(target);
                 projectileArrow.GetComponent<ProjectileArrow>().Create(projectileShootFrom, target);
             }       
         }
@@ -47,7 +48,7 @@ public class Tower : MonoBehaviour
     {
         GameObject bestTarget = null;
         float closestDistanceSqr = Mathf.Infinity;
-        Vector3 currentPosition = transform.position;
+        Vector3 currentPosition = gameObject.transform.position;
         foreach (GameObject potentialTarget in enemies)
         {
             Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;

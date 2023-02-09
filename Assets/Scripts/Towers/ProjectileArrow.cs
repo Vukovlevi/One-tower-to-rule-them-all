@@ -26,7 +26,7 @@ public class ProjectileArrow : MonoBehaviour
     {
         if (target == null)
         {
-            Destroy(gameObject);
+           Destroy(gameObject);
         }
         Vector3 moveDir = (target.transform.position - transform.position).normalized;
         transform.position += moveDir * moveSpeed * Time.deltaTime;
