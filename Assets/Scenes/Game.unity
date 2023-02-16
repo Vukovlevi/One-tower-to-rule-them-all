@@ -626,6 +626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a637b0ffffe4274f82f5744b5410bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stoneGenerator: {fileID: 8622023996395727655}
+  woodGenerator: {fileID: 612024517}
   UI: {fileID: 95974855}
   inventory: {fileID: 1355003084}
   buyUpgradeBtn: {fileID: 668399102}
@@ -11867,6 +11869,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19540e48fd3a1d24eaef8f30c7cdd634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stoneGenerator: {fileID: 8622023996395727655}
+  goldGenerator: {fileID: 115250487}
   UI: {fileID: 95974855}
   inventory: {fileID: 1355003084}
   buyUpgradeBtn: {fileID: 1401853656}
@@ -12452,7 +12456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileArrow: {fileID: 1889672202717757813, guid: 1cb025c9a634bf74ea0c7f5127b250d1, type: 3}
   target: {fileID: 0}
-  timeBetweenShots: 1
+  timeBetweenShots: 1.5
   timeSinceLastShot: 0
 --- !u!1001 &769176891
 PrefabInstance:
@@ -14069,7 +14073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1680800365
 Transform:
   m_ObjectHideFlags: 0
@@ -15086,6 +15090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55dc337997738e8479f18d23b2466705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodGenerator: {fileID: 612024517}
+  goldGenerator: {fileID: 115250487}
   UI: {fileID: 95974855}
   inventory: {fileID: 1355003084}
   buyUpgradeBtn: {fileID: 560804586}

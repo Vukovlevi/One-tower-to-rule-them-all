@@ -14,6 +14,8 @@ public class GoldUpgrade : MonoBehaviour
         public int golds;
     }
 
+    public GameObject stoneGenerator;
+    public GameObject woodGenerator;
     public GameObject UI;
     public GameObject inventory;
     public Button buyUpgradeBtn;
@@ -22,7 +24,7 @@ public class GoldUpgrade : MonoBehaviour
     public Text errorText;
     private Cost cost;
     private bool UIActive = false;
-    private int level = 1;
+    public int level = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,17 @@ public class GoldUpgrade : MonoBehaviour
 
     public void OnMouseDown()
     {
+        stoneGenerator.GetComponent<StoneUpgrade>().turnOffUI();
+        woodGenerator.GetComponent<WoodUpgrade>().turnOffUI();
         toggleUI();
+    }
+
+    public void turnOffUI()
+    {
+        UI.SetActive(false);
+        UIActive = false;
+        buyUpgradeBtn.gameObject.SetActive(false);
+        errorText.enabled = false;
     }
 
     private void toggleUI()
@@ -80,11 +92,10 @@ public class GoldUpgrade : MonoBehaviour
 
     private void showCost(Cost currentCost)
     {
+        levelText.text = "Szint: " + level.ToString();
         if (level == 3)
         {
-            errorText.text = "A legmagasabb szintű az épület!";
-            errorText.enabled = true;
-            levelText.text = "Szint: " + level.ToString();
+            costText.text = "A legmagasabb szintű az épület!";
             return;
         }
         string costString = "A következő fejlesztés ára:\n";

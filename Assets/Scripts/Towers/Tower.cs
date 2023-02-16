@@ -8,7 +8,7 @@ public class Tower : MonoBehaviour
     private Vector3 projectileShootFrom;
     public GameObject projectileArrow;
     public GameObject target;
-    public int timeBetweenShots = 3;
+    public float timeBetweenShots = 1.5f;
     public float timeSinceLastShot = 0;
     // Start is called before the first frame update
     void Start()
@@ -20,20 +20,15 @@ public class Tower : MonoBehaviour
     void Update()
     {
         timeSinceLastShot -= Time.deltaTime;
-        if (Input.GetMouseButtonDown(1))
-        {
-            projectileArrow.GetComponent<ProjectileArrow>().Create(projectileShootFrom, target);
-        }
 
         GameObject[] enemiesArray = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (enemiesArray.Length > 0)
+        if (enemiesArray.Length > 0 && timeSinceLastShot <= 0)
         {
             target = getClosestEnemy(enemiesArray);
-            if ((target.transform.position - transform.position).sqrMagnitude <= 5f && timeSinceLastShot <= 0)
+            if ((target.transform.position - transform.position).sqrMagnitude <= 10f)
             {
                 timeSinceLastShot = timeBetweenShots;
-                Debug.Log(target);
                 projectileArrow.GetComponent<ProjectileArrow>().Create(projectileShootFrom, target);
             }       
         }
