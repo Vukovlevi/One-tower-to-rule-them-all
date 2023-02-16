@@ -12595,7 +12595,7 @@ GameObject:
   - component: {fileID: 769632825}
   m_Layer: 0
   m_Name: Sp (3)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12628,8 +12628,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfEnemy1: {fileID: 478641500697301670, guid: ceaed2018657c4e46b6f09ffd6befd6d, type: 3}
-  timeBetweenSpawns: 3
-  timeSinceLastSpawn: 3
+  timeBetweenSpawns: 22
+  timeSinceLastSpawn: 20
+  timebetweenwaves: 60
+  countdown: 60
 --- !u!1 &775606575
 GameObject:
   m_ObjectHideFlags: 0
@@ -12835,8 +12837,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfEnemy1: {fileID: 1640714210514623119, guid: 8f870d8e776ca2c4d9a2681de5582f74, type: 3}
-  timeBetweenSpawns: 3
-  timeSinceLastSpawn: 3
+  timeBetweenSpawns: 22
+  timeSinceLastSpawn: 20
+  timebetweenwaves: 60
+  countdown: 60
 --- !u!1 &882152850
 GameObject:
   m_ObjectHideFlags: 0
@@ -13551,7 +13555,7 @@ GameObject:
   - component: {fileID: 1292055186}
   m_Layer: 0
   m_Name: Sp (1)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13584,8 +13588,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfEnemy1: {fileID: 1120270631251140648, guid: c683173d76d73b94abc05a4f0da89407, type: 3}
-  timeBetweenSpawns: 3
-  timeSinceLastSpawn: 3
+  timeBetweenSpawns: 22
+  timeSinceLastSpawn: 20
+  timebetweenwaves: 60
+  countdown: 60
 --- !u!1 &1355003084
 GameObject:
   m_ObjectHideFlags: 0
@@ -14222,7 +14228,7 @@ GameObject:
   - component: {fileID: 1701303694}
   m_Layer: 0
   m_Name: Sp (2)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14255,8 +14261,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfEnemy1: {fileID: 6301740647644078360, guid: 18fe956e65257ec439da82a3c175af5b, type: 3}
-  timeBetweenSpawns: 3
-  timeSinceLastSpawn: 3
+  timeBetweenSpawns: 22
+  timeSinceLastSpawn: 20
+  timebetweenwaves: 60
+  countdown: 60
 --- !u!1 &1701640646
 GameObject:
   m_ObjectHideFlags: 0
@@ -14926,7 +14934,7 @@ GameObject:
   - component: {fileID: 2098208406}
   m_Layer: 0
   m_Name: Sp (4)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14959,8 +14967,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfEnemy1: {fileID: 1000882940929961982, guid: c8b47de81d1a66540b0ae7e230d16a23, type: 3}
-  timeBetweenSpawns: 3
-  timeSinceLastSpawn: 3
+  timeBetweenSpawns: 22
+  timeSinceLastSpawn: 20
+  timebetweenwaves: 60
+  countdown: 60
 --- !u!1 &2125257379
 GameObject:
   m_ObjectHideFlags: 0
