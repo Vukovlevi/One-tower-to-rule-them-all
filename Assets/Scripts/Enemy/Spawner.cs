@@ -39,7 +39,7 @@ public class Spawner : MonoBehaviour
         for (int i=0; i <wavenumber; i++)
         {
             SpawnEnemy1();
-            yield return new WaitForSeconds(60f);
+            yield return new WaitForSeconds(0.5f);
         }
         wavenumber++;
     }
