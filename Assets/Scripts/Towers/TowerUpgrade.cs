@@ -1,11 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
-public class GoldUpgrade : MonoBehaviour
+public class TowerUpgrade : MonoBehaviour
 {
     public struct Cost
     {
@@ -73,17 +71,17 @@ public class GoldUpgrade : MonoBehaviour
 
     private void decideCost()
     {
-        switch(level)
+        switch (level)
         {
             case 1:
-                cost.woods = 4;
-                cost.stones = 4;
-                cost.golds = 6;
+                cost.woods = 6;
+                cost.stones = 2;
+                cost.golds = 1;
                 break;
             case 2:
-                cost.woods = 10;
-                cost.stones = 10;
-                cost.golds = 8;
+                cost.woods = 8;
+                cost.stones = 4;
+                cost.golds = 2;
                 break;
             case 3:
                 break;
@@ -92,26 +90,27 @@ public class GoldUpgrade : MonoBehaviour
 
     private void showCost(Cost currentCost)
     {
+        gameObject.GetComponentInParent<DecideTower>().decideTower(gameObject);
         levelText.text = "Szint: " + level.ToString();
         if (level == 3)
         {
-            costText.text = "A legmagasabb szintÅ± az Ã©pÃ¼let!";
+            costText.text = "A legmagasabb szintû az épület!";
             return;
         }
-        string costString = "A kÃ¶vetkezÅ‘ fejlesztÃ©s Ã¡ra:\n";
+        string costString = "A következõ fejlesztés ára:\n";
         if (currentCost.woods != 0)
         {
             costString += currentCost.woods.ToString() + " fa, ";
         }
         if (currentCost.stones != 0)
         {
-            costString += currentCost.stones.ToString() + " kÅ‘, ";
+            costString += currentCost.stones.ToString() + " kõ, ";
         }
         costString += currentCost.golds.ToString() + " arany";
         costText.text = costString;
     }
 
-    public void Upgrade()
+    public void upgrade()
     {
         if (level == 3)
         {
@@ -122,12 +121,12 @@ public class GoldUpgrade : MonoBehaviour
         int goldCount = inventory.GetComponent<Inventory>().CountItem("Gold");
         if (woodCount < cost.woods || stoneCount < cost.stones || goldCount < cost.golds)
         {
-            errorText.text = "Nincs elegendÅ‘ nyersanyagod a fejlesztÃ©shez!";
+            errorText.text = "Nincs elegendõ nyersanyagod a fejlesztéshez!";
             errorText.enabled = true;
             return;
         }
         level++;
-        this.GetComponentInParent<GoldGenerator>().UpgradeToLevel(level);
+        this.GetComponentInParent<Tower>().UpgradeToLevel(level);
         toggleUI();
     }
 }

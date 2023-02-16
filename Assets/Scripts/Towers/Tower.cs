@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,7 @@ public class Tower : MonoBehaviour
     private Vector3 projectileShootFrom;
     public GameObject projectileArrow;
     public GameObject target;
+    public GameObject inventory;
     public float timeBetweenShots = 1.5f;
     public float timeSinceLastShot = 0;
     // Start is called before the first frame update
@@ -56,5 +57,24 @@ public class Tower : MonoBehaviour
         }
 
         return bestTarget;
+    }
+
+    public void UpgradeToLevel(int level)
+    {
+        switch (level)
+        {
+            case 2:
+                inventory.GetComponent<Inventory>().removeItem("Log", 6);
+                inventory.GetComponent<Inventory>().removeItem("Stone", 2);
+                inventory.GetComponent<Inventory>().removeItem("Gold", 1);
+                timeBetweenShots = 10; // TODO: �les sz�mokra cser�lni
+                break;
+            case 3:
+                inventory.GetComponent<Inventory>().removeItem("Log", 8);
+                inventory.GetComponent<Inventory>().removeItem("Stone", 4);
+                inventory.GetComponent<Inventory>().removeItem("Gold", 2);
+                timeBetweenShots = 5;
+                break;
+        }
     }
 }

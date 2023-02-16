@@ -14,8 +14,6 @@ public class StoneUpgrade : MonoBehaviour
         public int golds;
     }
 
-    public GameObject woodGenerator;
-    public GameObject goldGenerator;
     public GameObject UI;
     public GameObject inventory;
     public Button buyUpgradeBtn;
@@ -39,8 +37,10 @@ public class StoneUpgrade : MonoBehaviour
 
     public void OnMouseDown()
     {
-        woodGenerator.GetComponent<WoodUpgrade>().turnOffUI();
-        goldGenerator.GetComponent<GoldUpgrade>().turnOffUI();
+        if (UI.activeSelf && !UIActive)
+        {
+            UI.GetComponent<ResetUpgrade>().turnOffAllUI();
+        }
         toggleUI();
     }
 

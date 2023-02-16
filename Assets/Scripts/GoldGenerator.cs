@@ -28,7 +28,7 @@ public class GoldGenerator : MonoBehaviour
         }
     }
 
-public void UpgradeToLevel(int level)
+    public void UpgradeToLevel(int level)
     {
         switch(level)
         {

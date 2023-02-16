@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 95974858}
   - component: {fileID: 95974857}
   - component: {fileID: 95974856}
+  - component: {fileID: 95974860}
   m_Layer: 5
   m_Name: UpgradeUI
   m_TagString: Untagged
@@ -387,6 +388,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &95974860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95974855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44293b36b8ceec04d8fe43f47f7b7889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodGenerator: {fileID: 612024517}
+  stoneGenerator: {fileID: 8622023996395727655}
+  goldGenerator: {fileID: 115250487}
+  towers: []
 --- !u!1 &104639910
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,14 +643,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a637b0ffffe4274f82f5744b5410bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stoneGenerator: {fileID: 8622023996395727655}
-  woodGenerator: {fileID: 612024517}
   UI: {fileID: 95974855}
   inventory: {fileID: 1355003084}
   buyUpgradeBtn: {fileID: 668399102}
   costText: {fileID: 1767273621}
   levelText: {fileID: 788935221}
   errorText: {fileID: 63671912}
+  level: 1
 --- !u!1 &146022167
 GameObject:
   m_ObjectHideFlags: 0
@@ -11869,14 +11885,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19540e48fd3a1d24eaef8f30c7cdd634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stoneGenerator: {fileID: 8622023996395727655}
-  goldGenerator: {fileID: 115250487}
   UI: {fileID: 95974855}
   inventory: {fileID: 1355003084}
   buyUpgradeBtn: {fileID: 1401853656}
   costText: {fileID: 1767273621}
   levelText: {fileID: 788935221}
   errorText: {fileID: 63671912}
+  level: 1
 --- !u!61 &612024522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12029,7 +12044,7 @@ GameObject:
   - component: {fileID: 668399103}
   - component: {fileID: 668399102}
   m_Layer: 5
-  m_Name: BuyGoldUpgrade
+  m_Name: BuyTowerUpgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12100,9 +12115,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 115250492}
-        m_TargetAssemblyTypeName: GoldUpgrade, Assembly-CSharp
-        m_MethodName: Upgrade
+      - m_Target: {fileID: 1756449634}
+        m_TargetAssemblyTypeName: DecideTower, Assembly-CSharp
+        m_MethodName: upgradeTower
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12418,9 +12433,11 @@ GameObject:
   m_Component:
   - component: {fileID: 764969413}
   - component: {fileID: 764969414}
+  - component: {fileID: 764969416}
+  - component: {fileID: 764969415}
   m_Layer: 0
   m_Name: Archer
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12456,8 +12473,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileArrow: {fileID: 1889672202717757813, guid: 1cb025c9a634bf74ea0c7f5127b250d1, type: 3}
   target: {fileID: 0}
+  inventory: {fileID: 1355003084}
   timeBetweenShots: 1.5
   timeSinceLastShot: 0
+--- !u!114 &764969415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764969412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85857f175fac28c4ab45f60e7ad9c546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 95974855}
+  inventory: {fileID: 1355003084}
+  buyUpgradeBtn: {fileID: 668399102}
+  costText: {fileID: 1767273621}
+  levelText: {fileID: 788935221}
+  errorText: {fileID: 63671912}
+  level: 1
+--- !u!61 &764969416
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764969412}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &769176891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14279,6 +14342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1756449633}
+  - component: {fileID: 1756449634}
   m_Layer: 0
   m_Name: Archers
   m_TagString: Untagged
@@ -14302,6 +14366,19 @@ Transform:
   m_Father: {fileID: 476659243}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1756449634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756449632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a245c22d5477145a7af53a6946ce17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTower: {fileID: 0}
 --- !u!1 &1767273619
 GameObject:
   m_ObjectHideFlags: 0
@@ -15090,11 +15167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55dc337997738e8479f18d23b2466705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodGenerator: {fileID: 612024517}
-  goldGenerator: {fileID: 115250487}
   UI: {fileID: 95974855}
   inventory: {fileID: 1355003084}
   buyUpgradeBtn: {fileID: 560804586}
   costText: {fileID: 1767273621}
   levelText: {fileID: 788935221}
   errorText: {fileID: 63671912}
+  level: 1

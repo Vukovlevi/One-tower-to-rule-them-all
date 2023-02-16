@@ -5,15 +5,13 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Transform pfEnemy1;
-    public int timeBetweenSpawns = 3;
-    public float timeSinceLastSpawn = 3;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float timeBetweenSpawns = 20f;
+    public float timeSinceLastSpawn = 20f;
+    public float timebetweenwaves = 60f;
+    public float countdown = 60f;
+    private int wavenumber = 1;
 
+    // Start is called before the first frame update
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +24,24 @@ public class Spawner : MonoBehaviour
         {
             timeSinceLastSpawn -= Time.deltaTime;
         }
+        if (countdown <= 0)
+        {
+            StartCoroutine(Spawnwave());
+            countdown = timebetweenwaves;
+        }
+        else
+        {
+            countdown -= Time.deltaTime;
+        }
+    }
+    IEnumerator Spawnwave()
+    {
+        for (int i = 0; i < wavenumber; i++)
+        {
+            SpawnEnemy1();
+            yield return new WaitForSeconds(0.5f);
+        }
+        wavenumber++;
     }
     public void SpawnEnemy1()
     {
