@@ -36,12 +36,16 @@ public class Spawner : MonoBehaviour
     }
     IEnumerator Spawnwave()
     {
+        wavenumber++;
+        if (wavenumber > 5)
+        {
+            wavenumber = 5;
+        }
         for (int i = 0; i < wavenumber; i++)
         {
             SpawnEnemy1();
             yield return new WaitForSeconds(0.5f);
         }
-        wavenumber++;
     }
     public void SpawnEnemy1()
     {
