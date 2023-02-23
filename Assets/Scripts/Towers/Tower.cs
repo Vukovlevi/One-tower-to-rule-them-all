@@ -11,7 +11,7 @@ public class Tower : MonoBehaviour
     public GameObject inventory;
     public float timeBetweenShots = 1.5f;
     public float timeSinceLastShot = 0;
-    public float range = 10f;
+    public float range = 15f;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,16 +65,17 @@ public class Tower : MonoBehaviour
         switch (level)
         {
             case 2:
-                inventory.GetComponent<Inventory>().removeItem("Log", 6);
+                inventory.GetComponent<Inventory>().removeItem("Log", 4);
                 inventory.GetComponent<Inventory>().removeItem("Stone", 2);
                 inventory.GetComponent<Inventory>().removeItem("Gold", 1);
-                timeBetweenShots = 1f; // TODO: �les sz�mokra cser�lni
+                timeBetweenShots = 0.5f; // TODO: �les sz�mokra cser�lni
                 break;
             case 3:
-                inventory.GetComponent<Inventory>().removeItem("Log", 8);
-                inventory.GetComponent<Inventory>().removeItem("Stone", 4);
+                inventory.GetComponent<Inventory>().removeItem("Log", 6);
+                inventory.GetComponent<Inventory>().removeItem("Stone", 3);
                 inventory.GetComponent<Inventory>().removeItem("Gold", 2);
-                range = 15f;
+                range = 20f;
+                timeBetweenShots = 0.4f;
                 break;
         }
     }

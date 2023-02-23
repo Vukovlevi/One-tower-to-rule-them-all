@@ -7,8 +7,8 @@ public class Spawner : MonoBehaviour
     public Transform pfEnemy1;
     public float timeBetweenSpawns = 20f;
     public float timeSinceLastSpawn = 20f;
-    public float timebetweenwaves = 60f;
-    public float countdown = 60f;
+    public float timebetweenwaves = 90f;
+    public float countdown = 90f;
     private int wavenumber = 1;
 
     // Start is called before the first frame update

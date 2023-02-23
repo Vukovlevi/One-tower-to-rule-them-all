@@ -78,14 +78,14 @@ public class WoodUpgrade : MonoBehaviour
         switch(level)
         {
             case 1:
-                cost.woods = 10;
+                cost.woods = 8;
                 cost.stones = 0;
-                cost.golds = 3;
+                cost.golds = 2;
                 break;
             case 2:
-                cost.woods = 15;
+                cost.woods = 12;
                 cost.stones = 3;
-                cost.golds = 5;
+                cost.golds = 3;
                 break;
             case 3:
                 break;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Character1 : MonoBehaviour
 {
+    public GameObject mainTower;
     public float speed;
     private Waypoints1 Wpoints1;
     private int waypointIndex1;
@@ -24,7 +25,7 @@ public class Character1 : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                mainTower.GetComponent<GameOver>().gameOver();
             }
         }
     }

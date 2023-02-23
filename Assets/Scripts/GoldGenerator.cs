@@ -35,13 +35,13 @@ public class GoldGenerator : MonoBehaviour
             case 2:
                 inventory.GetComponent<Inventory>().removeItem("Log", 4);
                 inventory.GetComponent<Inventory>().removeItem("Stone", 4);
-                inventory.GetComponent<Inventory>().removeItem("Gold", 6);
+                inventory.GetComponent<Inventory>().removeItem("Gold", 4);
                 timeBetweenGolds = 10; // TODO: �les sz�mokra cser�lni
                 break;
             case 3:
-                inventory.GetComponent<Inventory>().removeItem("Log", 10);
-                inventory.GetComponent<Inventory>().removeItem("Stone", 10);
-                inventory.GetComponent<Inventory>().removeItem("Gold", 8);
+                inventory.GetComponent<Inventory>().removeItem("Log", 8);
+                inventory.GetComponent<Inventory>().removeItem("Stone", 8);
+                inventory.GetComponent<Inventory>().removeItem("Gold", 6);
                 timeBetweenGolds = 5;
                 break;
         }

@@ -80,12 +80,12 @@ public class StoneUpgrade : MonoBehaviour
             case 1:
                 cost.woods = 0;
                 cost.stones = 4;
-                cost.golds = 4;
+                cost.golds = 2;
                 break;
             case 2:
                 cost.woods = 6;
                 cost.stones = 8;
-                cost.golds = 6;
+                cost.golds = 4;
                 break;
             case 3:
                 break;

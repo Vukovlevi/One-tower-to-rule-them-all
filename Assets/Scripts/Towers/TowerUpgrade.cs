@@ -74,13 +74,13 @@ public class TowerUpgrade : MonoBehaviour
         switch (level)
         {
             case 1:
-                cost.woods = 6;
+                cost.woods = 4;
                 cost.stones = 2;
                 cost.golds = 1;
                 break;
             case 2:
-                cost.woods = 8;
-                cost.stones = 4;
+                cost.woods = 6;
+                cost.stones = 3;
                 cost.golds = 2;
                 break;
             case 3:

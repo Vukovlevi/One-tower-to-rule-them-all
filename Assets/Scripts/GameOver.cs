@@ -8,6 +8,7 @@ public class GameOver : MonoBehaviour
     public int timeToClick = 30;
     public float timeSinceLastClick = 0;
     public Camera mainCamera;
+    private GameObject[] enemies;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (timeSinceLastClick > 0)
         {
             timeSinceLastClick -= Time.deltaTime;
@@ -51,5 +53,14 @@ public class GameOver : MonoBehaviour
         yield return new WaitForSeconds(1);
         mainCamera.transform.position = currentPosition;
         mainCamera.GetComponent<CameraController>().disableSecret();
+    }
+
+    public void gameOver()
+    {
+        Debug.Log("Game over");
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
     }
 }

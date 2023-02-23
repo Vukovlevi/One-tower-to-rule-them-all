@@ -33,14 +33,14 @@ public class WoodGenerator : MonoBehaviour
         switch(level)
         {
             case 2:
-                inventory.GetComponent<Inventory>().removeItem("Log", 10);
-                inventory.GetComponent<Inventory>().removeItem("Gold", 3);
+                inventory.GetComponent<Inventory>().removeItem("Log", 8);
+                inventory.GetComponent<Inventory>().removeItem("Gold", 2);
                 timeBetweenWoods = 3; // TODO: �les sz�mokra cser�lni
                 break;
             case 3:
-                inventory.GetComponent<Inventory>().removeItem("Log", 15);
+                inventory.GetComponent<Inventory>().removeItem("Log", 12);
                 inventory.GetComponent<Inventory>().removeItem("Stone", 3);
-                inventory.GetComponent<Inventory>().removeItem("Gold", 5);
+                inventory.GetComponent<Inventory>().removeItem("Gold", 3);
                 timeBetweenWoods = 1;
                 break;
         }
