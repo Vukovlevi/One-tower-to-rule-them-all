@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
     private float topBorderCoordinate = 4;
     private float rightBorderCoordinate = 9;
     private float bottomBorderCoordinate = -5;
+    private bool secretEnabled = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +39,7 @@ public class CameraController : MonoBehaviour
         {
             dragOrigin = cam.ScreenToWorldPoint(Input.mousePosition);
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !secretEnabled)
         {
             Vector3 difference = dragOrigin - cam.ScreenToWorldPoint(Input.mousePosition);
             Vector3 camPos = cam.transform.position;
@@ -71,5 +72,15 @@ public class CameraController : MonoBehaviour
     {
         float newSize = cam.orthographicSize - zoomValue;
         cam.orthographicSize = Mathf.Clamp(newSize, minCamSize, maxCamSize);
+    }
+
+    public void enableSecret()
+    {
+        secretEnabled = true;
+    }
+
+    public void disableSecret()
+    {
+        secretEnabled = false;
     }
 }

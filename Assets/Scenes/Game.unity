@@ -679,7 +679,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3795d829efb42354abf57426b21a8b6d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c829f827db43c484ba80f1df748f59b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -707,7 +707,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7, y: 0.67}
+    oldSize: {x: 0.56, y: 0.58}
     newSize: {x: 0.7, y: 0.67}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -728,6 +728,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a637b0ffffe4274f82f5744b5410bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 115250490}
+  upgradeSprites:
+  - {fileID: 21300000, guid: 9517a61b089bc1f4b8a7226aad28146e, type: 3}
+  - {fileID: 21300000, guid: c77c76ebcdff5ff489297a09861f258c, type: 3}
   UI: {fileID: 95974855}
   inventory: {fileID: 1355003084}
   buyUpgradeBtn: {fileID: 1062976557}
@@ -1267,7 +1271,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f184091660a687b40ac447833e7df962, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11993,7 +11997,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 19ac85e4e5fc18f4f8a4cf7990d3d3b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b34cecb03426624d98a5508ab9c1640, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12032,6 +12036,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19540e48fd3a1d24eaef8f30c7cdd634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 612024519}
+  upgradeSprites:
+  - {fileID: 21300000, guid: c29e5202cee33d041b7d2ff6e0948ad9, type: 3}
+  - {fileID: 21300000, guid: b48180a2e3df3cf4bae3e11a99eccf91, type: 3}
   UI: {fileID: 95974855}
   inventory: {fileID: 1355003084}
   buyUpgradeBtn: {fileID: 1401853656}
@@ -12056,7 +12064,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7, y: 0.67}
+    oldSize: {x: 0.56, y: 0.58}
     newSize: {x: 0.7, y: 0.67}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -12428,6 +12436,8 @@ GameObject:
   m_Component:
   - component: {fileID: 690224982}
   - component: {fileID: 690224981}
+  - component: {fileID: 690224984}
+  - component: {fileID: 690224983}
   m_Layer: 0
   m_Name: Main tower
   m_TagString: Untagged
@@ -12502,6 +12512,48 @@ Transform:
   m_Father: {fileID: 476659243}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690224983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690224980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc52fefbfd124de4d998ae5b120210dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clicks: 0
+  timeToClick: 30
+  timeSinceLastClick: 0
+  mainCamera: {fileID: 104639912}
+--- !u!61 &690224984
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690224980}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.94, y: 1.31}
+    newSize: {x: 0.94, y: 1.31}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.94, y: 1.31}
+  m_EdgeRadius: 0
 --- !u!1 &716860439
 GameObject:
   m_ObjectHideFlags: 0
@@ -15723,7 +15775,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9b3709898e5c84042b230a704fe42fe6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99b7d23271223224b9559ee3421fe64c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15802,7 +15854,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7, y: 0.67}
+    oldSize: {x: 0.56, y: 0.58}
     newSize: {x: 0.7, y: 0.67}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -15823,6 +15875,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55dc337997738e8479f18d23b2466705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8622023996395727653}
+  upgradeSprites:
+  - {fileID: 21300000, guid: e31fe8c0087183c44b8699e36d37a476, type: 3}
+  - {fileID: 21300000, guid: 4fba1243d80b845469537a61dfdda13b, type: 3}
   UI: {fileID: 95974855}
   inventory: {fileID: 1355003084}
   buyUpgradeBtn: {fileID: 560804586}

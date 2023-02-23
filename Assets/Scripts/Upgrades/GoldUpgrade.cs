@@ -14,6 +14,8 @@ public class GoldUpgrade : MonoBehaviour
         public int golds;
     }
 
+    public SpriteRenderer spriteRenderer;
+    public Sprite[] upgradeSprites;
     public GameObject UI;
     public GameObject inventory;
     public Button buyUpgradeBtn;
@@ -126,6 +128,7 @@ public class GoldUpgrade : MonoBehaviour
             errorText.enabled = true;
             return;
         }
+        spriteRenderer.sprite = upgradeSprites[level - 1];
         level++;
         this.GetComponentInParent<GoldGenerator>().UpgradeToLevel(level);
         toggleUI();
