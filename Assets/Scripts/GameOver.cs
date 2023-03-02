@@ -6,7 +6,7 @@ public class GameOver : MonoBehaviour
 {
     public GameObject gameOverUI;
     public int clicks = 0;
-    public int timeToClick = 30;
+    public int timeToClick = 10;
     public float timeSinceLastClick = 0;
     public Camera mainCamera;
     private GameObject[] enemies;
@@ -26,11 +26,6 @@ public class GameOver : MonoBehaviour
         } else
         {
             timeSinceLastClick = 0;
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            gameOver();
         }
     }
 

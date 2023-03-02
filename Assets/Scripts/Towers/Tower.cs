@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Tower : MonoBehaviour
 {
-
+    public AudioSource audioData;
     private Vector3 projectileShootFrom;
     public GameObject projectileArrow;
     public GameObject target;
@@ -15,7 +16,7 @@ public class Tower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioData = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +32,7 @@ public class Tower : MonoBehaviour
             if ((target.transform.position - transform.position).sqrMagnitude <= range)
             {
                 timeSinceLastShot = timeBetweenShots;
+                audioData.Play(0);
                 projectileArrow.GetComponent<ProjectileArrow>().Create(projectileShootFrom, target);
             }       
         }

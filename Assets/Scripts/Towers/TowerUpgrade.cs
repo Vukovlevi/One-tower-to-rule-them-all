@@ -12,6 +12,8 @@ public class TowerUpgrade : MonoBehaviour
         public int golds;
     }
 
+    public SpriteRenderer spriteRenderer;
+    public Sprite[] upgradeSprites;
     public GameObject UI;
     public GameObject inventory;
     public Button buyUpgradeBtn;
@@ -125,6 +127,7 @@ public class TowerUpgrade : MonoBehaviour
             errorText.enabled = true;
             return;
         }
+        spriteRenderer.sprite = upgradeSprites[level - 1];
         level++;
         this.GetComponentInParent<Tower>().UpgradeToLevel(level);
         toggleUI();
