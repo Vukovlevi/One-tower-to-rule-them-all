@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
+    public GameObject gameOverUI;
     public int clicks = 0;
     public int timeToClick = 30;
     public float timeSinceLastClick = 0;
@@ -18,13 +19,18 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        //enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (timeSinceLastClick > 0)
         {
             timeSinceLastClick -= Time.deltaTime;
         } else
         {
             timeSinceLastClick = 0;
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            gameOver();
         }
     }
 
@@ -57,7 +63,9 @@ public class GameOver : MonoBehaviour
 
     public void gameOver()
     {
-        Debug.Log("Game over");
+        Time.timeScale = 0;
+        gameOverUI.SetActive(true);
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
         {
             Destroy(enemy);
