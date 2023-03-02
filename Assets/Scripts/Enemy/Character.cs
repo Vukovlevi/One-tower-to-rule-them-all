@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
     private void Start()
     {
         Wpoints = GameObject.FindGameObjectWithTag("Waypoints").GetComponent<Waypoints>();
+        mainTower = GameObject.Find("Main tower");
     }
     private void Update()
     {
